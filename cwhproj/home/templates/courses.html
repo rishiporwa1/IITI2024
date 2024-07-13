@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block body %} 
+
+<div class="container padd">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for home in courses %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ home.thumbnail.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{home.title}}</h5>
+                        <p class="card-text">{{home.summary}}</p>
+                    </div>
+                <div class="card-footer">
+                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}
